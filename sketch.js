@@ -18,9 +18,9 @@ function setup(){
 
 function draw(){
 
-  if(hypnoticBallPosition.x > 300 || hypnoticBallPosition.x < -300 || hypnoticBallPosition.y < -300 || hypnoticBallPosition.y > 300) {
-    hypnoticBallPosition.x = 200
-    hypnoticBallPosition.y = 200
+  if(position.x > 300 || position.x < -300 || position.y < -300 || position.y > 300) {
+    position.x = 200
+    position.y = 200
   }
 
   background("white");
@@ -50,6 +50,7 @@ function writePosition(x,y){
 
 function readPosition(data){
   position = data.val();
+  console.log(position.y);
   console.log(position.x);
   hypnoticBall.x = position.x;
   hypnoticBall.y = position.y;
