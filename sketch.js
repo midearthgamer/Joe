@@ -19,7 +19,8 @@ function setup(){
 function draw(){
 
   if(hypnoticBallPosition.x > 300 || hypnoticBallPosition.x < -300 || hypnoticBallPosition.y < -300 || hypnoticBallPosition.y > 300) {
-
+    hypnoticBallPosition.x = 200
+    hypnoticBallPosition.y = 200
   }
 
   background("white");
