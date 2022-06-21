@@ -23,13 +23,13 @@ function draw(){
     if(keyDown(LEFT_ARROW)){
       writePosition(-3,0);
     }
-    else if(keyDown(RIGHT_ARROW)){
+    if(keyDown(RIGHT_ARROW)){
       writePosition(3,0);
     }
-    else if(keyDown(UP_ARROW)){
+    if(keyDown(UP_ARROW)){
       writePosition(0,-3);
     }
-    else if(keyDown(DOWN_ARROW)){
+    if(keyDown(DOWN_ARROW)){
       writePosition(0,+3);
     }
     drawSprites();
