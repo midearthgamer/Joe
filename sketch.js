@@ -18,11 +18,6 @@ function setup(){
 
 function draw(){
 
-  if(position.x > 300 || position.x < -300 || position.y < -300 || position.y > 300) {
-    position.x = 200
-    position.y = 200
-  }
-
   background("white");
   
     if(keyDown(LEFT_ARROW)){
