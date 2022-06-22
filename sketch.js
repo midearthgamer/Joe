@@ -19,8 +19,6 @@ function setup(){
 
 function draw(){
 
-    background(c1,c2,c3)
-
     if(keyDown(LEFT_ARROW)){
       writePosition(-5,0);
     }
