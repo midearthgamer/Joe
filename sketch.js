@@ -1,7 +1,7 @@
 var hypnoticBall, database;
 var position;
 
-var c1,c2,c3
+var c1,c2,c3;
 
 function setup(){
   database = firebase.database();
@@ -18,9 +18,42 @@ function setup(){
 }
 
 function draw(){
-    
+  if(keyDown("SPACE")){
     background(c1,c2,c3)
-  
+  }
+  else{
+  }
+
+    if(hypnoticBall.y <= 0) {
+      database.ref('ball/position').set({
+        'x': hypnoticBall.x,
+        'y': 5
+      })
+    }
+
+    if(hypnoticBall.y >= 600) {
+      database.ref('ball/position').set({
+        'x': hypnoticBall.x,
+        'y': 595
+      })
+    }
+
+    if(hypnoticBall.x <= 0) {
+      database.ref('ball/position').set({
+        'x': 5,
+        'y': hypnoticBall.y
+      })
+    }
+
+    if(hypnoticBall.x >= 600) {
+      database.ref('ball/position').set({
+        'x': 595,
+        'y': hypnoticBall.y
+      })
+    }
+
+
+
     if(keyDown(LEFT_ARROW)){
       writePosition(-5,0);
     }
@@ -35,20 +68,11 @@ function draw(){
     }
     drawSprites();
 
-    if(hypnoticBall.y >= 600 || hypnoticBall.y <= 0 || hypnoticBall.x >= 600 || hypnoticBall.x <= 0) {
-      c1 = random(63,191)
-      c2 = random(63,191)
-      c3 = random(63,191)
-      database.ref('ball/position').set({
-        'x': 300,
-        'y': 300
-      })
-    }
 }
 
 function writePosition(x,y){
   database.ref('ball/position').set({
-    'x': position.x + x ,
+    'x': position.x + x,
     'y': position.y + y
   })
 }
